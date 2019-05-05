@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: c84b3ace3954f9144ab469ac4993021c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2554768595615315461
+    second: Friends_0
+  - first:
+      213: 1740270444667309017
+    second: Friends_1
+  - first:
+      213: 2679494407301654269
+    second: Friends_2
+  - first:
+      213: 2201013582848218369
+    second: Friends_3
+  - first:
+      213: -7238734329892281091
+    second: Friends_4
+  - first:
+      213: 3519882799382481111
+    second: Friends_5
+  - first:
+      213: -2356507129363841250
+    second: Friends_6
+  - first:
+      213: 6314240135839937555
+    second: Friends_7
+  - first:
+      213: 305353871330767433
+    second: Friends_8
+  - first:
+      213: 2917689963498506248
+    second: Friends_9
+  - first:
+      213: 6410036530913724153
+    second: Friends_10
+  - first:
+      213: 3112587413825259270
+    second: Friends_11
+  - first:
+      213: 2724758155170527783
+    second: Friends_12
+  - first:
+      213: 367563408465958746
+    second: Friends_13
+  - first:
+      213: -1227214288271912216
+    second: Friends_14
+  - first:
+      213: -4582618852997271800
+    second: Friends_15
+  - first:
+      213: -4118543689381408944
+    second: Friends_16
+  - first:
+      213: -5774663283743818001
+    second: Friends_17
+  - first:
+      213: -4868002325357145513
+    second: Friends_18
+  - first:
+      213: -8788897879447730126
+    second: Friends_19
+  - first:
+      213: 6350620140719837553
+    second: Friends_20
+  - first:
+      213: 3349901000467237011
+    second: Friends_21
+  - first:
+      213: 7716131146764930427
+    second: Friends_22
+  - first:
+      213: -4869195814934414786
+    second: Friends_23
+  - first:
+      213: -4400775611578879614
+    second: Friends_24
+  - first:
+      213: -4749155801164087350
+    second: Friends_25
+  - first:
+      213: -4373106160340670643
+    second: Friends_26
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Friends_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 172
+        width: 504
+        height: 456
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6955ce5e35c88f4883509065d73e866
+      internalID: -2554768595615315461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8693a650185579448a2f9069877bae1a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
