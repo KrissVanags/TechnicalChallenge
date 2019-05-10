@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 /// <summary>
 /// Handles the menu panel interactions
@@ -26,12 +29,32 @@ public class MainMenuUI : MonoBehaviour
         /// Panel linked to the button
         /// </summary>
         public GameObject panelGameObject;
+
+        /// <summary>
+        /// Position of the camera when the panel is selected
+        /// </summary>
+        public Vector3 cameraPosition;
+
+        /// <summary>
+        /// Rotation of the camera when the panel is selected
+        /// </summary>
+        public Vector3 cameraRotation;
+        
+        /// <summary>
+        /// How long the camera should take to get to the final position
+        /// </summary>
+        public float cameraTransitionTime;
     }
 
     /// <summary>
     /// List of all the menu panels
     /// </summary>
     public MenuPanel[] menuPanels;
+
+    /// <summary>
+    /// Camera which is showing background animation, this will be moved on panel changes
+    /// </summary>
+    public Camera backgroundCamera;
     
     private void Start()
     {
@@ -86,8 +109,41 @@ public class MainMenuUI : MonoBehaviour
             if (panel.panelGameObject == aMenuPanel.panelGameObject)
             {
                 panel.panelGameObject.SetActive(true);
+
+                StopAllCoroutines();
+                StartCoroutine(_TransitionCamera(panel.cameraPosition, panel.cameraRotation, panel.cameraTransitionTime));
+                
                 return;
             }
         }
+    }
+
+    /// <summary>
+    /// Moves the camera to the desired location over a given time
+    /// </summary>
+    /// <param name="aPosition">Position the camera should move to</param>
+    /// <param name="aRotation">Rotation the camera should move to</param>
+    /// <param name="aTransitionTime">How long the transition should take</param>
+    /// <returns></returns>
+    IEnumerator _TransitionCamera(Vector3 aPosition, Vector3 aRotation, float aTransitionTime)
+    {
+        float timer = 0;
+
+        // Save position for transition calculations
+        Vector3 startingPosition = backgroundCamera.transform.position;
+        Vector3 startingRotation = backgroundCamera.transform.eulerAngles;
+     
+        while (timer <= aTransitionTime)
+        {
+            backgroundCamera.transform.position = Vector3.Slerp(startingPosition, aPosition, timer / aTransitionTime);
+            backgroundCamera.transform.eulerAngles = Vector3.Slerp(startingRotation, aRotation, timer / aTransitionTime);
+                 
+            timer += Time.deltaTime;
+     
+            yield return null;
+        }
+
+        backgroundCamera.transform.position = aPosition;
+        backgroundCamera.transform.eulerAngles = aRotation;
     }
 }
