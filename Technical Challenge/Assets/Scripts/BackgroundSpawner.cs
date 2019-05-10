@@ -49,19 +49,21 @@ public class BackgroundSpawner : MonoBehaviour
                 Random.RandomRange(objectsBounds.min.y, objectsBounds.max.y),
                 Random.RandomRange(objectsBounds.min.z, objectsBounds.max.z));
 
-            spawned.AddComponent<Rigidbody>().useGravity = false;
+            Rigidbody rb = spawned.AddComponent<Rigidbody>();
+            rb.useGravity = false;
+            
             spawned.GetComponent<MeshRenderer>().material.color = Random.ColorHSV();
             
             BackgroundBox backgroundBox = spawned.AddComponent<BackgroundBox>();
 
             backgroundBox.movementDirection = Random.onUnitSphere;
-            backgroundBox.rotationDirection = new Vector3(Random.Range(30, 90), Random.Range(30, 90),Random.Range(30, 90));
+            backgroundBox.rotationDirection = new Vector3(Random.Range(5, 90), Random.Range(5, 90),Random.Range(5, 90));
             
             spawnedObjects.Add(backgroundBox);
         }
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         // Check if box is outside of bounds, if so move it to the opposite side
         foreach (var box in spawnedObjects)
@@ -72,29 +74,35 @@ public class BackgroundSpawner : MonoBehaviour
                 
                 if (boxPos.x < objectsBounds.min.x)
                 {
-                    boxPos.x = objectsBounds.max.x;
+                    boxPos.x = objectsBounds.min.x;
+                    box.movementDirection.x = -box.movementDirection.x;
                 }
                 if (boxPos.x > objectsBounds.max.x)
                 {
-                    boxPos.x = objectsBounds.min.x;
+                    boxPos.x = objectsBounds.max.x;
+                    box.movementDirection.x = -box.movementDirection.x;
                 }
                 if (boxPos.y < objectsBounds.min.y)
                 {
-                    boxPos.y = objectsBounds.max.y;
+                    boxPos.y = objectsBounds.min.y;
+                    box.movementDirection.y = -box.movementDirection.y;
                 }
                 if (boxPos.y > objectsBounds.max.y)
                 {
-                    boxPos.y = objectsBounds.min.y;
+                    boxPos.y = objectsBounds.max.y;
+                    box.movementDirection.y = -box.movementDirection.y;
                 }
                 if (boxPos.z < objectsBounds.min.z)
                 {
-                    boxPos.z = objectsBounds.max.z;
+                    boxPos.z = objectsBounds.min.z;
+                    box.movementDirection.z = -box.movementDirection.z;
                 }
                 if (boxPos.z > objectsBounds.max.z)
                 {
-                    boxPos.z = objectsBounds.min.z;
+                    boxPos.z = objectsBounds.max.z;
+                    box.movementDirection.z = -box.movementDirection.z;
                 }
-
+                
                 box.transform.position = boxPos;
             }
         }

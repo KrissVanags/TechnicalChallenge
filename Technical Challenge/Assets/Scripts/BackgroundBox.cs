@@ -15,18 +15,29 @@ public class BackgroundBox : MonoBehaviour
     // The direction the cube should be moving over time
     public Vector3 movementDirection;
 
-    private void Update()
+    public Rigidbody rigidBody;
+
+    public void Start()
+    {
+        rigidBody = GetComponent<Rigidbody>();
+    }
+    
+    private void FixedUpdate()
     {
         transform.localPosition += movementDirection * Time.deltaTime;
-        transform.localEulerAngles += rotationDirection * Time.deltaTime;
+        transform.Rotate(rotationDirection * Time.deltaTime);
+
+        // Removes any jitter in the rigidbody movements
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.rotation = Quaternion.identity;
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.GetComponent<BackgroundBox>())
         {
-            movementDirection = -movementDirection;
-            rotationDirection = -rotationDirection;
+            movementDirection = Random.onUnitSphere;
+            rotationDirection = new Vector3(Random.Range(5, 90), Random.Range(5, 90),Random.Range(5, 90));
         }
     }
 }
